@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>مَنارة الرأي | مجلة النقد الرقمية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eae2d7;
+      font-family: 'Tajawal', 'Cairo', 'Amiri', sans-serif;
+      color: #1e2a2e;
+      line-height: 1.65;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(200, 180, 160, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 90% 70%, rgba(160, 140, 120, 0.12) 0%, transparent 30%);
+    }
+
+    .site-container {
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(255, 252, 245, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 64px 64px 48px 48px;
+      padding: 2.8rem 2.8rem 2.5rem;
+      box-shadow: 
+        0 30px 50px -20px rgba(60, 40, 20, 0.25),
+        0 0 0 1px rgba(230, 215, 190, 0.6) inset,
+        0 0 0 2px rgba(255, 255, 245, 0.5) inset;
+      border: 1px solid rgba(255, 245, 230, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    .masthead {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .masthead::after {
+      content: '';
+      display: block;
+      width: 150px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #b2967c, #c8aa8a, #b2967c, transparent);
+      margin-top: 1rem;
+      border-radius: 3px;
+    }
+
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-name {
+      font-family: 'Tajawal', 'Amiri', sans-serif;
+      font-weight: 800;
+      font-size: 3.8rem;
+      color: #3b2f26;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 5px rgba(170, 130, 90, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-name i {
+      color: #b28b65;
+      font-size: 3.2rem;
+    }
+
+    .subhead {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #7a6452;
+      background: rgba(235, 220, 205, 0.5);
+      padding: 0.3rem 2rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      border: 1px solid #e2cfbb;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subhead i {
+      color: #b28b65;
+      font-size: 1.3rem;
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 1.8rem;
+      color: #5c4e40;
+      font-weight: 500;
+      background: rgba(250, 240, 230, 0.6);
+      padding: 0.8rem 2.2rem;
+      border-radius: 60px;
+      border: 1px solid #decbb8;
+      backdrop-filter: blur(4px);
+      flex-wrap: wrap;
+    }
+
+    .nav-row span {
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: default;
+      transition: 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-row span i {
+      color: #a58363;
+    }
+
+    .nav-row span:hover {
+      border-bottom-color: #b89b7b;
+      color: #3f372e;
+    }
+
+    .article-header {
+      margin: 2.2rem 0 2rem;
+      background: rgba(255, 250, 240, 0.4);
+      border-radius: 70px;
+      padding: 1.8rem 2.5rem;
+      border: 1px solid #eddccb;
+      box-shadow: 0 8px 18px -8px rgba(100, 70, 40, 0.1);
+    }
+
+    .article-category {
+      display: inline-block;
+      background: #dccfc1;
+      color: #3f3a32;
+      padding: 0.4rem 1.8rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.2rem;
+      border: 1px solid #c9b49d;
+      box-shadow: inset 0 1px 4px #f9efe4;
+    }
+
+    .article-category i {
+      margin-left: 8px;
+      color: #7b614d;
+    }
+
+    h1 {
+      font-family: 'Tajawal', 'Amiri', serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #2d241e;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      color: #635548;
+      font-size: 1.1rem;
+      align-items: center;
+      background: #f2eadf;
+      padding: 0.7rem 2rem;
+      border-radius: 60px;
+      border: 1px solid #decbb8;
+    }
+
+    .article-meta i {
+      margin-left: 8px;
+      color: #a58363;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: #4f5d53;
+      border-bottom: 1px dashed #aeafa9;
+    }
+
+    .verification-badge {
+      background: #f0f3f2;
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #2d5545;
+      font-size: 1rem;
+      border: 1px solid #cbd9d4;
+      margin-right: 1rem;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0 2.5rem;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      flex: 1 1 320px;
+      display: flex;
+      flex-direction: column;
+      background: #fffefc;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.22, 1);
+      border: 1px solid #eedbcb;
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 25px 35px -12px rgba(90, 70, 50, 0.15);
+      transform: translateY(-6px);
+      border-color: #dbbd9f;
+    }
+
+    .image-frame {
+      background: #f6f4f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.8rem 1rem;
+      border-bottom: 1px solid #e3dfd8;
+    }
+
+    .image-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px -10px rgba(80, 60, 40, 0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .image-frame img:hover {
+      transform: scale(1.02);
+    }
+
+    .img-caption {
+      padding: 1.3rem 1.8rem 1.5rem;
+      font-size: 1rem;
+      color: #4d5559;
+      background-color: #ffffff;
+      border-top: 1px solid #f1ede8;
+      line-height: 1.6;
+    }
+
+    .img-caption i {
+      color: #a28e7a;
+      margin-left: 8px;
+    }
+
+    .img-caption a {
+      color: #6a6e6b;
+      text-decoration: none;
+      border-bottom: 1px dotted #b2aba2;
+      transition: 0.15s;
+    }
+
+    .img-caption a:hover {
+      color: #3f4a4a;
+      border-bottom: 1px solid #6a5e53;
+    }
+
+    .gallery-item.tweet-card {
+      background: #fffefc;
+      border: 1px solid #eedbcb;
+      border-radius: 40px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item.tweet-card:hover {
+      transform: translateY(-6px);
+      border-color: #dbbd9f;
+      box-shadow: 0 25px 35px -12px rgba(90, 70, 50, 0.15);
+    }
+    
+    .tweet-container {
+      background: #f9f5ef;
+      padding: 1.8rem 1.5rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid #e3dfd8;
+    }
+    
+    .twitter-tweet {
+      margin: 0 auto !important;
+      border-radius: 30px !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02) !important;
+      border: 1px solid #decbb8 !important;
+      background: #ffffff !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    
+    .analysis-badge {
+      padding: 1.3rem 1.8rem 1.5rem;
+      font-size: 1rem;
+      color: #4d5559;
+      background-color: #ffffff;
+      border-top: 1px solid #f1ede8;
+      line-height: 1.6;
+    }
+    
+    .analysis-badge i {
+      color: #a28e7a;
+      margin-left: 8px;
+    }
+
+    .visual-analysis-note {
+      margin-top: 1.8rem;
+      background: rgba(235, 220, 205, 0.3);
+      border-radius: 40px;
+      padding: 1.5rem 2rem;
+      border: 1px solid #decbb8;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .analysis-icon {
+      background: #dccfc1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5c4e40;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .analysis-text {
+      flex: 1;
+      font-size: 1.2rem;
+      color: #2f4545;
+      line-height: 1.7;
+    }
+    
+    .analysis-text strong {
+      color: #9d6b4b;
+      font-weight: 700;
+    }
+
+    .essay-body {
+      font-family: 'Amiri', 'Cairo', serif;
+      background: #fffdf9;
+      border-radius: 60px;
+      border: 1px solid #f0e3d6;
+      margin: 2.5rem 0;
+      box-shadow: inset 0 2px 8px rgba(255, 250, 240, 0.8);
+      overflow: hidden;
+    }
+
+    .essay-section {
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid #f0e3d6;
+    }
+
+    .essay-section:last-child {
+      border-bottom: none;
+    }
+
+    .essay-section.intro {
+      background: linear-gradient(to bottom, #fffdf9, #fff9f2);
+    }
+
+    .essay-quote {
+      position: relative;
+      padding: 2.5rem 3rem;
+      background: #f9f2e9;
+      border-radius: 50px;
+      margin: 0 0 2rem 0;
+      font-size: 1.9rem;
+      font-weight: 450;
+      border-right: 12px solid #bfafa2;
+      color: #2f4545;
+      box-shadow: 0 8px 18px -8px rgba(80, 60, 40, 0.1);
+      font-family: 'Amiri', serif;
+    }
+
+    .essay-quote i {
+      color: #9b8b7a;
+      margin-left: 15px;
+      opacity: 0.8;
+      font-size: 2.6rem;
+    }
+
+    .essay-body p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #2a3535;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .essay-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-family: 'Tajawal', 'Amiri', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3b2f26;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #eae2d8;
+      padding-bottom: 0.8rem;
+    }
+
+    .section-title i {
+      color: #b28b65;
+      font-size: 1.8rem;
+    }
+
+    .mechanism-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .mechanism-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      background: rgba(250, 240, 230, 0.4);
+      border-radius: 50px;
+      border: 1px solid #eedbcb;
+    }
+
+    .mechanism-icon {
+      background: #dccfc1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5c4e40;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .mechanism-content {
+      flex: 1;
+    }
+
+    .mechanism-title {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3b2f26;
+      margin-bottom: 0.3rem;
+    }
+
+    .mechanism-desc {
+      font-size: 1.2rem;
+      color: #4f5d53;
+      line-height: 1.6;
+    }
+
+    .stats-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+
+    .stat-card {
+      background: #f2eadf;
+      border-radius: 40px;
+      padding: 1.5rem 2rem;
+      flex: 1 1 200px;
+      text-align: center;
+      border: 1px solid #decbb8;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #b28b65;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #5c4e40;
+      font-weight: 500;
+    }
+
+    .solution-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .solution-card {
+      background: white;
+      border-radius: 40px;
+      padding: 1.8rem;
+      flex: 1 1 200px;
+      border: 1px solid #eedbcb;
+      transition: all 0.3s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+      border-color: #b89b7b;
+      box-shadow: 0 15px 25px -10px #bea184;
+    }
+
+    .solution-icon {
+      width: 60px;
+      height: 60px;
+      background: #f9f2e9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #b28b65;
+      font-size: 1.8rem;
+    }
+
+    .solution-title {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #3b2f26;
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-desc {
+      font-size: 1rem;
+      color: #536767;
+      line-height: 1.5;
+    }
+
+    .closing-statement {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #2d4545;
+      text-align: center;
+      padding: 2rem;
+      background: #f9f2e9;
+      border-radius: 50px;
+      margin: 1.5rem 0 0;
+    }
+
+    .palestine-note {
+      font-size: 1.6rem;
+      padding: 1.5rem;
+      background: rgba(210, 180, 140, 0.1);
+      border-radius: 50px;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid #eedbcb;
+    }
+
+    .future-articles {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 2px solid #eae2d8;
+    }
+
+    .future-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .future-header h3 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #3b2f26;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .future-header h3 i {
+      color: #b28b65;
+    }
+
+    .future-header span {
+      background: #edebe8;
+      padding: 0.4rem 1.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      color: #5b4f44;
+      border: 1px solid #cfbca9;
+    }
+
+    .article-teaser {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .teaser-card {
+      background: #fefcf8;
+      border-radius: 40px;
+      padding: 2rem 2.2rem;
+      flex: 1 1 240px;
+      border: 1px solid #eedbcb;
+      transition: all 0.25s;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+    }
+
+    .teaser-card:hover {
+      background: white;
+      border-color: #cbb7a6;
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -12px #bea184;
+    }
+
+    .teaser-card i {
+      color: #aa9b8c;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .teaser-card h4 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #2c3e4f;
+    }
+
+    .teaser-card p {
+      color: #536767;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .trust-signals {
+      display: flex;
+      gap: 2rem;
+      font-size: 1rem;
+      color: #637676;
+      margin-top: 2rem;
+      background: #f2eadf;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      border: 1px solid #decbb8;
+      flex-wrap: wrap;
+    }
+
+    .site-footer {
+      margin-top: 4rem;
+      color: #5f7375;
+      font-size: 1rem;
+      border-top: 1px solid #e1ddd6;
+      padding-top: 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links span {
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links i {
+      color: #a58363;
+    }
+
+    .future-expand {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #b1b9b9;
+      border-top: 1px dashed #e1dad3;
+      padding-top: 1.2rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 768px) {
+      .essay-section {
+        padding: 1.5rem;
+      }
+      
+      .essay-quote {
+        padding: 1.8rem;
+        font-size: 1.4rem;
+      }
+      
+      .essay-body p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+      
+      .mechanism-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      
+      .closing-statement {
+        font-size: 1.3rem;
+      }
+      
+      .palestine-note {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .essay-quote {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+      }
+      
+      .essay-body p {
+        font-size: 1.1rem;
+      }
+    }
+
+    ::selection {
+      background: #d7cec4;
+      color: #1e2a2e;
+    }
+  </style>
+</head>
+<body>
+  <div class="site-container">
+    <div class="masthead">
+      <div class="logo-area">
+        <div class="logo-name">
+          <i class="fas fa-feather-alt"></i> 
+          مَنارة الرأي
+        </div>
+        <div class="subhead">
+          <i class="fas fa-pen-fancy"></i>
+          منصة مستقلة للنقد وحرية التعبير
+          <i class="fas fa-dove"></i>
+        </div>
+      </div>
+      <div class="nav-row">
+        <span><i class="far fa-newspaper"></i> مقالات</span>
+        <span><i class="far fa-comment-dots"></i> نقاش</span>
+        <span><i class="far fa-edit"></i> كتابة</span>
+        <span><i class="fas fa-archive"></i> أرشيف</span>
+      </div>
+    </div>
+
+    <div class="article-header">
+      <span class="article-category"><i class="fas fa-robot"></i> تحقيق خاص · ذكاء اصطناعي</span>
+      <h1>فيديوهات الذكاء الاصطناعي: حين يصبح الزيف أكثر إقناعًا من الحقيقة</h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1rem;">
+        <div class="article-meta">
+          <span><i class="fas fa-user-astronaut"></i> <span class="author-name">هيئة التحرير</span></span>
+          <span><i class="fas fa-calendar-alt"></i> ٢٠٢٦ · عدد خاص</span>
+          <span><i class="fas fa-clock"></i> ٩ دقائق قراءة</span>
+        </div>
+        <div class="verification-badge">
+          <i class="fas fa-check-circle"></i> تحليل بصري معمق
+        </div>
+      </div>
+    </div>
+
+    <div class="image-gallery">      
+      <div class="gallery-item tweet-card">
+        <div class="tweet-container">
+          <blockquote class="twitter-tweet" data-media-max-width="560">
+            <p lang="ar" dir="rtl">قام أستاذ جامعي من جامعة ولاية أوهايو بإسقاط مصور تلفزيوني أرضاً لمجرد طرحه أسئلة حول إبسـ ـتين.<br><br>سؤال: تخمين وش انتمائه السياسي بناءً على رد فعله على سؤال محرج.... <a href="https://t.co/JOuvv2cfcj">pic.twitter.com/JOuvv2cfcj</a> <a href="https://t.co/R6A8eFQNRJ">https://t.co/R6A8eFQNRJ</a></p>
+            &mdash; عـ.ـمير🏅 (@xxx12____) <a href="https://twitter.com/xxx12____/status/2022413747596427585?ref_src=twsrc%5Etfw">February 13, 2026</a>
+          </blockquote> 
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="analysis-badge">
+          <i class="fas fa-eye"></i> <strong>تحليل بصري | كشف الخداع:</strong> يمكنك أن تلاحظ في ثانية ٠:٠٧ اختفاء بعض الأشياء التي أسقطها الصحفي بشكل غريب وغير منطقي. هذا الاضطراب البصري دليل تقني على أن المقطع مصنوع بالذكاء الاصطناعي. أصبح من الصعب معرفة الحقيقة من المزيف في زمن التزييف العميق.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="image-frame">
+          <img src="https://i.ibb.co/MDdFRVrz/Whats-App-Image-2026-02-13-at-23-41-15.jpg" alt="صورة تحليلية تظهر اختفاء غير منطقي في فيديو مفبرك" loading="lazy">
+        </div>
+        <div class="img-caption">
+          <i class="fas fa-link"></i> دليل قاطع على أن الفيديو مصنوع بأدوات الذكاء الاصطناعي.
+          <br><a href="https://x.com/i/status/2022413747596427585" target="_blank"><i class="fas fa-play-circle"></i> مشاهدة الفيديو الأصلي على إكس (X)</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="essay-body">
+      <div class="essay-section intro">
+        <div class="essay-quote">
+          <i class="fas fa-quote-right" style="float: right;"></i>
+          <p style="margin-bottom:0; font-weight: 500;">“لم يعد المحتوى المزيّف مجرد صورة معدّلة أو خبر مفبرك ركيك الصياغة. اليوم، أصبح بإمكاننا إنتاج صور، أصوات، ومقاطع فيديو تبدو واقعية إلى حد يصعب معه التمييز بين الحقيقي والمصنوع.”</p>
+        </div>
+        <p>
+          نحن لا نتحدث عن أخطاء فوتوشوب واضحة، بل عن “واقع اصطناعي” متقن التفاصيل: ملامح بشرية طبيعية، ظلال متناسقة، تعابير وجه دقيقة، وحتى نبرة صوت مطابقة للأصل. وهنا تبدأ المشكلة الحقيقية: حين يصبح الزيف أكثر إقناعًا من الحقيقة، تتآكل الثقة في كل مرئي.
+        </p>
+      </div>
+
+      <div class="essay-section">
+        <div class="section-title">
+          <i class="fas fa-exclamation-triangle"></i> أين يكمن الخطر؟
+        </div>
+        <div class="mechanism-list">
+          <div class="mechanism-item">
+            <div class="mechanism-icon"><i class="fas fa-globe"></i></div>
+            <div class="mechanism-content">
+              <div class="mechanism-title">١. تضليل الرأي العام</div>
+              <div class="mechanism-desc">مقاطع فيديو “عميقة التزييف” (Deepfake) قد تُظهر شخصية عامة وهي تقول ما لم تقله أبدًا. تخيّل خطابًا سياسيًا مفبركًا ينتشر قبل انتخابات بساعات — التأثير قد يكون كارثيًا.</div>
+            </div>
+          </div>
+          <div class="mechanism-item">
+            <div class="mechanism-icon"><i class="fas fa-user-slash"></i></div>
+            <div class="mechanism-content">
+              <div class="mechanism-title">٢. اغتيال السمعة</div>
+              <div class="mechanism-desc">يكفي مقطع مزيف مدته ٣٠ ثانية لتدمير سمعة شخص، حتى لو ثبت لاحقًا أنه مفبرك. الضرر المعنوي يحدث أسرع من التصحيح.</div>
+            </div>
+          </div>
+          <div class="mechanism-item">
+            <div class="mechanism-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="mechanism-content">
+              <div class="mechanism-title">٣. فقدان الثقة الجماعية</div>
+              <div class="mechanism-desc">الأخطر من الكذبة نفسها هو انتشار فكرة: “لا يمكن الوثوق بأي شيء.” عندما نشك في كل صورة وكل فيديو، نصل إلى مرحلة انهيار الثقة في الأدلة البصرية نفسها.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="essay-section">
+        <div class="section-title">
+          <i class="fas fa-question-circle"></i> لماذا أصبح من الصعب اكتشافه؟
+        </div>
+        <p>تطور الخوارزميات بشكل سريع، وتوفر أدوات سهلة الاستخدام لعامة الناس، وانتشار المحتوى بسرعة قبل التحقق منه، واعتماد كثيرين على العاطفة بدل التحليل.</p>
+        <div class="stats-highlight">
+          <div class="stat-card"><div class="stat-number">٨٠٪</div><div class="stat-label">زيادة في محتوى التزييف العميق (٢٠٢٥)</div></div>
+          <div class="stat-card"><div class="stat-number">٣ث</div><div class="stat-label">متوسط سرعة مشاركة قبل التفكير</div></div>
+          <div class="stat-card"><div class="stat-number">٥٠+</div><div class="stat-label">أداة تزييف متاحة مجاناً</div></div>
+        </div>
+      </div>
+
+      <div class="essay-section">
+        <div class="section-title">
+          <i class="fas fa-microphone-slash"></i> أمثلة على الاستخدام المضلل
+        </div>
+        <p>• حسابات تنشر صور “أحداث عاجلة” غير حقيقية.<br>
+        • تسجيلات صوتية منسوبة لشخصيات معروفة.<br>
+        • مقاطع حرب أو احتجاجات تم توليدها رقميًا.<br>
+        وقد أعلنت منصات مثل Meta وYouTube عن سياسات لمحاربة المحتوى المُضلِّل، لكن سرعة الانتشار غالبًا تتفوق على سرعة الحذف.</p>
+      </div>
+
+      <div class="essay-section">
+        <div class="section-title">
+          <i class="fas fa-list-ul"></i> المشكلات الأساسية
+        </div>
+        <div class="solution-grid" style="margin-top:0;">
+          <div class="solution-card"><div class="solution-icon"><i class="fas fa-gavel"></i></div><div class="solution-title">غياب التشريعات</div><div class="solution-desc">في كثير من الدول.</div></div>
+          <div class="solution-card"><div class="solution-icon"><i class="fas fa-graduation-cap"></i></div><div class="solution-title">ضعف الثقافة الرقمية</div><div class="solution-desc">لدى المستخدمين.</div></div>
+          <div class="solution-card"><div class="solution-icon"><i class="fas fa-heart-broken"></i></div><div class="solution-title">استغلال العاطفة</div><div class="solution-desc">لتحقيق انتشار أسرع.</div></div>
+          <div class="solution-card"><div class="solution-icon"><i class="fas fa-search"></i></div><div class="solution-title">صعوبة التحقق</div><div class="solution-desc">للمستخدم العادي.</div></div>
+        </div>
+      </div>
+
+      <div class="essay-section">
+        <div class="section-title">
+          <i class="fas fa-tools"></i> ما الحل؟
+        </div>
+        <p style="margin-bottom:0.5rem;"><strong>أولًا: على المستوى الفردي</strong></p>
+        <p>لا تشارك أي محتوى صادم فورًا. تحقق من المصدر، ابحث عن الخبر في أكثر من وسيلة، دقّق في التفاصيل: حركة الشفاه، الظلال، انعكاس الضوء، أخطاء في الخلفية.</p>
+        <p style="margin:1rem 0 0.5rem;"><strong>ثانيًا: على المستوى التقني</strong></p>
+        <p>تطوير أدوات كشف التزييف العميق، فرض وسم إلزامي على المحتوى المُنشأ بالذكاء الاصطناعي، وتعاون المنصات مع هيئات مستقلة للتحقق.</p>
+        <p style="margin:1rem 0 0.5rem;"><strong>ثالثًا: على المستوى المجتمعي</strong></p>
+        <p>إدراج الثقافة الرقمية في المناهج التعليمية، وتعزيز التفكير النقدي بدل التلقي العاطفي.</p>
+
+        <div class="closing-statement">
+          لسنا أمام صراع بين الإنسان والآلة، بل أمام صراع بين الوعي والانخداع. الذكاء الاصطناعي أداة — يمكن أن يبني ويمكن أن يضلل. والمشكلة ليست في التقنية نفسها، بل في غياب الضوابط والوعي.
+        </div>
+      </div>
+
+      <div class="essay-section">
+        <p style="font-size:1.5rem; font-style:italic; color:#3b5e5e; text-align:center;">
+          “في زمنٍ صار فيه الزيف متقنًا، لم يعد يكفي أن نرى كي نصدق… بل أصبح لزامًا أن نفكر قبل أن نؤمن.”
+        </p>
+      </div>
+
+      <div class="essay-section">
+        <div class="palestine-note">
+          <i class="fas fa-circle" style="font-size: 0.9rem; color: #aa9f93;"></i>
+          اللهم انصر إخواننا في فلسطين
+        </div>
+      </div>
+    </div>
+
+    <div class="future-articles">
+      <div class="future-header">
+        <h3><i class="fas fa-book-open"></i> مقالات قادمة على المنصة</h3>
+        <span><i class="far fa-clock"></i> قريباً ⋮⋯</span>
+      </div>
+      <div class="article-teaser">
+        <div class="teaser-card">
+          <i class="fas fa-microchip"></i>
+          <h4>سلاح الـ Deepfake</h4>
+          <p>كيف تستخدم الحكومات والجماعات التزييف العميق لقلب الحقائق؟</p>
+          <span style="color:#a18063;">— العدد الثالث</span>
+        </div>
+        <div class="teaser-card">
+          <i class="fas fa-hand-peace"></i>
+          <h4>هاشتاغ الحقيقة</h4>
+          <p>حملات مضادة لفضح التزييف: متطوعون يكشفون الفبركات ثانية بدقيقة.</p>
+          <span style="color:#a18063;">— إعداد خاص</span>
+        </div>
+        <div class="teaser-card">
+          <i class="fas fa-balance-scale"></i>
+          <h4>التنظيم الأخلاقي</h4>
+          <p>هل تنجح القوانين العربية في مواكبة طوفان الذكاء الاصطناعي؟</p>
+          <span style="color:#a18063;">— ملف تفاعلي</span>
+        </div>
+      </div>
+      <div class="trust-signals">
+        <span><i class="fas fa-shield-alt"></i> جميع المقالات تخضع للتدقيق</span>
+        <span><i class="fas fa-pen-fancy"></i> كتاب مستقلون</span>
+        <span><i class="fas fa-dove"></i> حرية مسؤولة</span>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-dove" style="color: #8e9ea0; font-size: 1.5rem;"></i>
+        <span>مَنارة الرأي — لكل صوت عربي حرّ. العدد الخاص - ٢٠٢٦</span>
+      </div>
+      <div class="footer-links">
+        <span><i class="fab fa-twitter"></i> إكس</span>
+        <span><i class="fas fa-envelope"></i> مراسلة</span>
+        <span><i class="fas fa-rss"></i> خلاصة</span>
+        <span><i class="fas fa-archive"></i> أرشيف</span>
+      </div>
+    </footer>
+
+    <div class="future-expand">
+      <span><i class="fas fa-code-branch"></i> مساحة مفتوحة لمقالات نقدية إضافية — قابلة للتوسع.</span>
+      <span><i class="fas fa-archive"></i> النسخة الموثقة: ربيع ٢٠٢٦</span>
+    </div>
+  </div>
+</body>
+</html>
